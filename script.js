@@ -140,7 +140,7 @@ function clickNum(index) {
         document.getElementById("insertParentheses");
 
     // 数字入れ替えモード
-    if(check_Parentheses_class.className != "pressed") {
+    if(!check_Parentheses_class.classList.contains("pressed")) {
 
         if(selectedIndex == -1) {
             selectedIndex = index;
@@ -252,6 +252,26 @@ function deleteParentheses() {
 // 括弧挿入処理
 
 function insertParentheses() {
+
+    if(parentheses_num == 1) {
+
+        const warnText =
+            document.getElementById("warn_text");
+
+        warnText.textContent =
+            "先に右括弧を置いてください";
+
+        warnText.classList.remove("hidden");
+
+        clearTimeout(warnTimer);
+
+        warnTimer = setTimeout(() => {
+            warnText.classList.add("hidden");
+        }, 1000);
+
+        return;
+    }
+
     document
         .getElementById("insertParentheses")
         .classList.toggle("pressed");
