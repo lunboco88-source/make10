@@ -110,6 +110,8 @@ function CreateProblem() {
 
 
     document.getElementById("ans_exam").textContent = "";
+    document.getElementById("answer").textContent = "";
+    document.getElementById("ans_word").textContent = "";
 
     while(1) {
         for(let i = 0; i < 4; i++) {
@@ -174,8 +176,7 @@ function clickNum(index) {
             let left_parentheses =
                 document.createElement("span");
 
-            left_parentheses.className =
-                "parentheses ans";
+            left_parentheses.className = "parentheses ans";
 
             left_parentheses.textContent = "(";
 
@@ -242,6 +243,10 @@ function deleteParentheses() {
     while(delete_parentheses.length > 0) {
         delete_parentheses[0].remove();
     }
+
+    parentheses_num = 0;
+    left_parentheses_index = -1;
+    left_parentheses_element = null;
 }
 
 // 括弧挿入処理
@@ -289,6 +294,7 @@ function checkAns() {
 
 function showAns() {
     let new_answer_exam = answer_exam.replaceAll("*", "×");
-    new_answer_exam = answer_exam.replaceAll("/", "÷");
-    document.getElementById("ans_exam").textContent = answer_exam;
+    new_answer_exam = new_answer_exam.replaceAll("/", "÷");
+    console.log(new_answer_exam);
+    document.getElementById("ans_exam").textContent = new_answer_exam;
 }
