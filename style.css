@@ -1,0 +1,45 @@
+body {
+    text-align: center;
+    font-size: 3em;
+}
+
+input[type = "button"] {
+    width: 100px;
+    height: 50px;
+    font-size: 15px;
+}
+
+select {
+    position: relative;
+    bottom: 2px;
+    left: 8px;
+
+
+
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+    border: none;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+select::-ms-expand {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.selected {
+    color: red;
+}
+
+.pressed {
+    background-color: red;
+    border: none;
+}

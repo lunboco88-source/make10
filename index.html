@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>make10puzzle</title>
+        <link rel = "stylesheet" href = "style.css">
+        <meta charset = "UTF-8">
+    </head>
+    <body>
+        <h1>make10パズル</h1>
+
+        <input type = "button" value = "問題生成" onclick = "CreateProblem()">
+
+        <input type = "button" value = "括弧挿入" id = "insertParentheses" class = "hidden" onclick = "insertParentheses()">
+
+        <input type = "button" value = "括弧リセット" id = "deleteParentheses" class = "hidden" onclick = "deleteParentheses()">
+
+        <p>
+            <span id = "num1" class = "num ans" onclick = "clickNum(0)"></span>
+
+            <select id="operator1" class = "hidden operator ans">
+                <option>+</option>
+                <option>-</option>
+                <option>×</option>
+                <option>÷</option>
+            </select>
+
+            <span id = "num2" class = "num ans" onclick = "clickNum(1)"></span>
+
+            <select id="operator2" class = "hidden operator ans">
+                <option>+</option>
+                <option>-</option>
+                <option>×</option>
+                <option>÷</option>
+            </select>
+
+            <span id = "num3" class = "num ans" onclick = "clickNum(2)"></span>
+
+            <select id="operator3" class = "hidden operator ans">
+                <option>+</option>
+                <option>-</option>
+                <option>×</option>
+                <option>÷</option>
+            </select>
+            
+            <span id = "num4" class = "num ans" onclick = "clickNum(3)"></span>
+        </p>
+
+        <p id = "warn_text" class = "hidden">
+            そこには括弧はおけません
+        </p>
+
+        <p>
+            <input type = "button" value = "正誤判定" id = "checkAns" class = "hidden" onclick = "checkAns()">
+            <input type = "button" value = "解答例" id = "show_ans" class = "hidden" onclick = "showAns()">
+        </p>
+
+        <p id = "answer"></p>
+        <p id = "ans_word"></p>
+        <p id = "ans_exam"></p>
+
+        <script src = "script.js"></script>
+    </body>
+</html>
